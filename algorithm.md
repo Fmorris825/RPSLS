@@ -26,3 +26,13 @@ Display 12: Display Champion of game.
 
 
 
+Game.py 
+    pick sinlge or multi
+
+Player.py
+    AI.py
+    Human.py
+
+main.py
+
+
