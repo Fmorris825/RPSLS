@@ -1,6 +1,6 @@
 class Scissors:
     def __init__(self):
-        pass
+        self.name = 'Scissors'
 
 # Scissors beats paper and lizard
 # beat by Spock and Rock

@@ -1,6 +1,7 @@
 class Paper:
     def __init__(self):
-        pass
+        self.name = 'Paper'
+
 
 #paper beats rock and Spock
 #beat by lizard and scissors

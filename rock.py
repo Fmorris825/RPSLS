@@ -4,7 +4,7 @@ from multiprocessing.pool import INIT
 
 class Rock:
     def __init__(self):
-        pass
+        self.name = 'Rock'
 
 
 #rock beats scissors and lizard
