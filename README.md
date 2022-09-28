@@ -1,5 +1,5 @@
 # RPSLS
 
-Hey Bud
+A collaborative file between Fred Morris, Saul Ruiz, and Tyler Brinker
 
-Here's an update for the test
+Code to run a game of Rock, Paper, Scissors, Lizard, Spock between a user and either a second user, or a computer opponent.
