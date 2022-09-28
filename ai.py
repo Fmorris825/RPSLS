@@ -1,7 +1,7 @@
 from player import Player
 
 
-class AI:
+class AI(Player):
     def __init__(self):
         self.name = 'Sunny'
     

@@ -24,6 +24,5 @@ class Game:
             self.player2 = Human()
         if selection == 2:
             self.player2 = AI()
-        return self.player2
 
         
