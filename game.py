@@ -39,6 +39,10 @@ class Game:
     def run_match(self):
         player1_gesture = self.player1.select_gesture()
         player2_gesture = self.player2.select_gesture()
+        while player1_gesture == player2_gesture:
+            print('Tie! Try again!')
+            player1_gesture = self.player1.select_gesture()
+            player2_gesture = self.player2.select_gesture()
         player1_victory = self.decide_winner(player1_gesture, player2_gesture)
         print(player1_victory)
 
