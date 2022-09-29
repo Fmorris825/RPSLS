@@ -21,6 +21,20 @@ class Game:
         if selection == 2:
             self.player2 = Human()
 
+    def display_rules(self):
+        print(f'\n')
+        print(f'Rules: \nFirst to win 2 rounds wins the match! \n')
+        print('Rock crushes Scissors')
+        print('Scissors cut Paper')
+        print('Paper covers Rock')
+        print('Rock crushes Lizard')
+        print('Spock smashes Scissors')
+        print('Scissors decapitates Lizard')
+        print('Lizard eats Paper')
+        print('Paper disproves Spock')
+        print('Spock vaporizes Rock')
+        print(f'\n')
+
     def run_match(self):
         self.player1.select_gesture()
         self.player2.select_gesture()
@@ -34,5 +48,6 @@ class Game:
         self.display_greeting()
         self.multiplayer_or_ai()
         self.get_name()
+        self.display_rules()
         self.run_match()
         
