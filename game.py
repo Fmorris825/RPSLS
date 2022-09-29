@@ -37,21 +37,30 @@ class Game:
         print(f'\n')
 
     def run_match(self):
-        player1_wins = 0
-        player2_wins = 0
-        while player1_wins < 2 and player2_wins < 2:
+        self.player1_wins = 0
+        self.player2_wins = 0
+        while self.player1_wins < 2 and self.player2_wins < 2:
             player1_gesture = self.player1.select_gesture()
             player2_gesture = self.player2.select_gesture()
             while player1_gesture == player2_gesture:
-                print('Tie! Try again!')
+                print(f'\nTie! Try again!\n')
                 player1_gesture = self.player1.select_gesture()
                 player2_gesture = self.player2.select_gesture()
             player1_victory = self.decide_winner(player1_gesture, player2_gesture)
-            
+
             if player1_victory:
-                player1_wins += 1
+                self.player1_wins += 1
             else:
-                player2_wins += 1
+                self.player2_wins += 1
+            
+            print(f'{self.player1.name} has {self.player1_wins} wins')
+            print(f'{self.player2.name} has {self.player2_wins} wins')
+
+    def display_winner(self):
+        if self.player1_wins == 2:
+            print(f'\n{self.player1.name} wins!!')
+        if self.player2_wins == 2:
+            print(f'\n{self.player2.name} wins!!')
 
 
     def get_name(self):
@@ -85,4 +94,5 @@ class Game:
         self.get_name()
         # self.display_rules()
         self.run_match()
+        self.display_winner()
         
