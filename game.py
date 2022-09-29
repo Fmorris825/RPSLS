@@ -38,7 +38,8 @@ class Game:
     def run_match(self):
         player1_gesture = self.player1.select_gesture()
         player2_gesture = self.player2.select_gesture()
-        self.decide_winner(player1_gesture, player2_gesture)
+        player1_victory = self.decide_winner(player1_gesture, player2_gesture)
+        print(player1_victory)
 
     def get_name(self):
         self.player1.get_name()
@@ -47,15 +48,28 @@ class Game:
     def decide_winner(self, player1_gesture, player2_gesture):
         player1_victory = False
         if player1_gesture == 'Rock':
-            if player2_gesture == 'Scissors' or 'Lizard':
+            if player2_gesture == 'Scissors' or player2_gesture == 'Lizard':
                 player1_victory = True
+        if player1_gesture == 'Paper':
+            if player2_gesture == 'Spock' or player2_gesture == 'Rock':
+                player1_victory = True
+        if player1_gesture == 'Scissors':
+            if player2_gesture == 'Paper' or player2_gesture == 'Lizard':
+                player1_victory = True
+        if player1_gesture == 'Lizard':
+            if player2_gesture == 'Spock' or player2_gesture == 'Paper':
+                player1_victory = True
+        if player1_gesture == 'Spock':
+            if player2_gesture == 'Rock' or player2_gesture == 'Scissors':
+                player1_victory = True
+        return player1_victory
                 
 
 
     def run_game(self):
-        self.display_greeting()
+        # self.display_greeting()
         self.multiplayer_or_ai()
         self.get_name()
-        self.display_rules()
+        # self.display_rules()
         self.run_match()
         
