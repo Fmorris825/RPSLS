@@ -37,14 +37,22 @@ class Game:
         print(f'\n')
 
     def run_match(self):
-        player1_gesture = self.player1.select_gesture()
-        player2_gesture = self.player2.select_gesture()
-        while player1_gesture == player2_gesture:
-            print('Tie! Try again!')
+        player1_wins = 0
+        player2_wins = 0
+        while player1_wins < 2 and player2_wins < 2:
             player1_gesture = self.player1.select_gesture()
             player2_gesture = self.player2.select_gesture()
-        player1_victory = self.decide_winner(player1_gesture, player2_gesture)
-        print(player1_victory)
+            while player1_gesture == player2_gesture:
+                print('Tie! Try again!')
+                player1_gesture = self.player1.select_gesture()
+                player2_gesture = self.player2.select_gesture()
+            player1_victory = self.decide_winner(player1_gesture, player2_gesture)
+            
+            if player1_victory:
+                player1_wins += 1
+            else:
+                player2_wins += 1
+
 
     def get_name(self):
         self.player1.get_name()
