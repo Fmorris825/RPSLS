@@ -26,6 +26,7 @@ class Game:
 
 
     def display_rules(self):
+        # list and loop
         print(f'\n')
         print(f'Rules: \nFirst to win 2 rounds wins the match! \n')
         print('Rock crushes Scissors')
@@ -44,6 +45,8 @@ class Game:
         self.player2_wins = 0
         while self.player1_wins < 2 and self.player2_wins < 2:
             sleep(1)
+            self.display_gestures()
+            sleep(1)
             player1_gesture = self.player1.select_gesture()
             player2_gesture = self.player2.select_gesture()
             while player1_gesture == player2_gesture:
@@ -53,9 +56,14 @@ class Game:
                 print(f'\nTie! Try again!\n')
                 player1_gesture = self.player1.select_gesture()
                 player2_gesture = self.player2.select_gesture()
+
+            print()
             for gesture in self.player1.gestures:
+                print()
                 print(f'{gesture}!')
                 sleep(.3)
+            print()
+            
 
             # print(f'\n{self.player1.name} throws {player1_gesture}\n')
             # print(f'{self.player2.name} throws {player2_gesture}\n')
@@ -107,6 +115,12 @@ class Game:
                 player1_victory = True
         return player1_victory
                 
+    def display_gestures(self):
+        i = 0
+        for gesture in self.player1.gestures:
+            i += 1
+            print(f'[{i}] {gesture}')
+        print()
 
 
     def run_game(self):

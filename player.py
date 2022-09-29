@@ -5,13 +5,7 @@ class Player:
         self.gestures = ['Rock', 'Paper', 'Scissors', 'Lizard', 'Spock']
     
     def select_gesture(self, player_name):
-        i = 0
-        for gesture in self.gestures:
-            i += 1
-            print(f'[{i}] {gesture}')     
         gesture_selection = input(f'\nSelect your move: ')
-        print()
-
         while gesture_selection != '1' and gesture_selection != '2' and gesture_selection != '3' and gesture_selection != '4' and gesture_selection != '5':
             print('Invalid')
             gesture_selection = input(f'\nSelect your move: ')
@@ -24,5 +18,4 @@ class Player:
 
     def get_name(self, player_name):
         self.name = input(f'\n{player_name} what is your name? ')
-        
         
