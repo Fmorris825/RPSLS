@@ -44,6 +44,7 @@ class Game:
             player2_gesture = self.player2.select_gesture()
             while player1_gesture == player2_gesture:
                 for gesture in self.player1.gestures:
+                    print()
                     print(f'{gesture}!')
                     sleep(.3)
                 print(f'\nTie! Try again!\n')

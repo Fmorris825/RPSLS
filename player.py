@@ -7,10 +7,17 @@ class Player:
         self.points = 0
     
     def select_gesture(self):
-        gesture_selection = input(f'\nSelect your move: ')
-        while gesture_selection != '1' and gesture_selection != '2' and gesture_selection != '3' and gesture_selection != '4' and gesture_selection != '5':
-            print('Invalid')
-            gesture_selection = input(f'\nSelect your move: ')
+        gesture_selection = ''
+        while gesture_selection not in range(1,6):
+            try:
+                gesture_selection = int(input(f'\nSelect your move: '))
+                
+            except ValueError: 
+                print('Invalid Input')
+                
+        # while gesture_selection != range(1,6):
+        #     print('Invalid')
+        #     gesture_selection = input(f'\nSelect your move: ')
 
         gesture_selection = int(gesture_selection)
         gesture_index = gesture_selection - 1
