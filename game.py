@@ -17,15 +17,22 @@ class Game:
         while selection != 1 and selection != 2:
             selection = int(input('Invalid, please enter 1 or 2: '))
         if selection == 1:
-            self.player2 = Human()
-        if selection == 2:
             self.player2 = AI()
+        if selection == 2:
+            self.player2 = Human()
 
-    def run_match():
-        pass
+    def run_match(self):
+        self.player1.select_gesture()
+        self.player2.select_gesture()
+
+    def get_name(self):
+        self.player1.get_name()
+        self.player2.get_name()
+
 
     def run_game(self):
         self.display_greeting()
         self.multiplayer_or_ai()
+        self.get_name()
         self.run_match()
         

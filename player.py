@@ -2,7 +2,6 @@
 
 class Player:
     def __init__(self):
-
         self.gestures = ['Rock', 'Paper', 'Scissors', 'Lizard', 'Spock']
     
     def select_gesture(self, player_name):
@@ -15,3 +14,8 @@ class Player:
         gesture_index = gesture_selection - 1
         gesture = self.gestures[gesture_index]
         print(f'{player_name} plays: {gesture}!')
+
+    def get_name(self):
+        self.name = input(f'\n What is your name? ')
+        
+        

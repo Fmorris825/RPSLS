@@ -9,3 +9,6 @@ class Human(Player):
     def select_gesture(self):
         return super().select_gesture(self.name)
 
+    def get_name(self):
+        return super().get_name()
+
