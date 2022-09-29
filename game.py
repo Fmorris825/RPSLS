@@ -1,4 +1,5 @@
-from re import T
+import time
+from time import sleep
 from human import Human
 from ai import AI
 
@@ -42,14 +43,22 @@ class Game:
         self.player1_wins = 0
         self.player2_wins = 0
         while self.player1_wins < 2 and self.player2_wins < 2:
+            sleep(1)
             player1_gesture = self.player1.select_gesture()
             player2_gesture = self.player2.select_gesture()
             while player1_gesture == player2_gesture:
+                for gesture in self.player1.gestures:
+                    print(f'{gesture}!')
+                    sleep(.3)
                 print(f'\nTie! Try again!\n')
                 player1_gesture = self.player1.select_gesture()
                 player2_gesture = self.player2.select_gesture()
-            print(f'\n{self.player1.name} throws {player1_gesture}\n')
-            print(f'{self.player2.name} throws {player2_gesture}\n')
+            for gesture in self.player1.gestures:
+                print(f'{gesture}!')
+                sleep(.3)
+
+            # print(f'\n{self.player1.name} throws {player1_gesture}\n')
+            # print(f'{self.player2.name} throws {player2_gesture}\n')
             player1_victory = self.decide_winner(player1_gesture, player2_gesture)
 
             if player1_victory:
@@ -57,9 +66,16 @@ class Game:
             else:
                 self.player2_wins += 1
             
-            print(f'{self.player1.name} has {self.player1_wins} wins')
+            winner_bracket = "loses to"
+            if player1_victory:
+                winner_bracket = "beats"
+            
+            print(f'{self.player1.name} : {player1_gesture} {winner_bracket} {player2_gesture} : {self.player2.name}')
+            print(f'{self.player1.name} : {self.player1_wins} | {self.player2.name} : {self.player2_wins}')
+            # print(f'{self.player1.name} has {self.player1_wins} wins')
+            # print()
+            # print(f'{self.player2.name} has {self.player2_wins} wins')
             print()
-            print(f'{self.player2.name} has {self.player2_wins} wins')
 
     def display_winner(self):
         if self.player1_wins == 2:
@@ -69,9 +85,7 @@ class Game:
 
 
     def get_name(self):
-        # print('Enter Player 1 name: ')
         self.player1.get_name('Player 1')
-        # print('Player 2 what is your name: ')
         self.player2.get_name('Player 2')
 
     def decide_winner(self, player1_gesture, player2_gesture):
