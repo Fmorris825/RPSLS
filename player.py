@@ -18,10 +18,10 @@ class Player:
         gesture_selection = int(gesture_selection)
         gesture_index = gesture_selection - 1
         gesture = self.gestures[gesture_index]
-        print(f'{player_name} plays: {gesture}!')
+        
         return gesture
 
     def get_name(self):
-        self.name = input(f'\n What is your name? ')
+        self.name = input(f'\nWhat is your name? ')
         
         

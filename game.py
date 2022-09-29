@@ -48,6 +48,8 @@ class Game:
                 print(f'\nTie! Try again!\n')
                 player1_gesture = self.player1.select_gesture()
                 player2_gesture = self.player2.select_gesture()
+            print(f'\n{self.player1.name} throws {player1_gesture}\n')
+            print(f'{self.player2.name} throws {player2_gesture}\n')
             player1_victory = self.decide_winner(player1_gesture, player2_gesture)
 
             if player1_victory:
@@ -56,6 +58,7 @@ class Game:
                 self.player2_wins += 1
             
             print(f'{self.player1.name} has {self.player1_wins} wins')
+            print()
             print(f'{self.player2.name} has {self.player2_wins} wins')
 
     def display_winner(self):
@@ -91,10 +94,10 @@ class Game:
 
 
     def run_game(self):
-        # self.display_greeting()
+        self.display_greeting()
         self.multiplayer_or_ai()
         self.get_name()
-        # self.display_rules()
+        self.display_rules()
         self.run_match()
         self.display_winner()
         
