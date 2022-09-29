@@ -5,7 +5,7 @@ from ai import AI
 class Game:
     def __init__(self):
         self.player1 = Human()
-        self.player2 = ''
+        self.player2 = 'Player 2'
 
     def display_greeting(self):
         print(f'\n$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$')
@@ -69,8 +69,10 @@ class Game:
 
 
     def get_name(self):
-        self.player1.get_name()
-        self.player2.get_name()
+        # print('Enter Player 1 name: ')
+        self.player1.get_name('Player 1')
+        # print('Player 2 what is your name: ')
+        self.player2.get_name('Player 2')
 
     def decide_winner(self, player1_gesture, player2_gesture):
         player1_victory = False

@@ -10,7 +10,7 @@ class AI(Player):
         gesture_selection = random.choice(self.gestures)
         return gesture_selection
 
-    def get_name(self):
+    def get_name(self, name):
         self.name = random.choice(self.name)
 
 

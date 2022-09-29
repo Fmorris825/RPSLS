@@ -21,7 +21,7 @@ class Player:
         
         return gesture
 
-    def get_name(self):
-        self.name = input(f'\nWhat is your name? ')
+    def get_name(self, player_name):
+        self.name = input(f'\n{player_name} what is your name? ')
         
         
