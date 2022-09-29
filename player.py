@@ -1,12 +1,11 @@
-from ai import AI
-import random
+
 
 class Player:
     def __init__(self):
 
         self.gestures = ['Rock', 'Paper', 'Scissors', 'Lizard', 'Spock']
     
-    def select_gesture(self):
+    def select_gesture(self, player_name):
         i = 0
         for gesture in self.gestures:
             i += 1
@@ -15,4 +14,4 @@ class Player:
 
         gesture_index = gesture_selection - 1
         gesture = self.gestures[gesture_index]
-        return gesture
+        print(f'{player_name} plays: {gesture}!')

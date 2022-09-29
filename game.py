@@ -1,23 +1,19 @@
-from player import Player
 from human import Human
 from ai import AI
 
 class Game:
     def __init__(self):
         self.player1 = Human()
-        self.player2 = self.multiplayer_or_AI()
-
-
+        self.player2 = ''
 
     def display_greeting(self):
-        print(f'\n')
-        print('Welcome to rock paper scissors lizard spock')
+        print(f'\n$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$')
+        print(f'$$$$$ Welcome to ROCK PAPER SCISSORS LIZARD SPOCK $$$$$$')
+        print(f'$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n')
 
-    def run_game(self):
-        pass
-
-    def multiplayer_or_AI(self):
-        selection = int(input('Play against \n [1] Friend \n[2] Computer?\n'))
+    def multiplayer_or_ai(self):
+        print(f'What game mode do you want to play? ')
+        selection = int(input('\n[1] Single \n[2] Multiplayer\n\n'))
         while selection != 1 and selection != 2:
             selection = int(input('Invalid, please enter 1 or 2: '))
         if selection == 1:
@@ -25,4 +21,11 @@ class Game:
         if selection == 2:
             self.player2 = AI()
 
+    def run_match():
+        pass
+
+    def run_game(self):
+        self.display_greeting()
+        self.multiplayer_or_ai()
+        self.run_match()
         

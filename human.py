@@ -7,5 +7,5 @@ class Human(Player):
         super().__init__()
 
     def select_gesture(self):
-        return super().select_gesture()
+        return super().select_gesture(self.name)
 
