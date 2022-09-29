@@ -14,13 +14,15 @@ class Game:
 
     def multiplayer_or_ai(self):
         print(f'What game mode do you want to play? ')
-        selection = int(input('\n[1] Single \n[2] Multiplayer\n\n'))
-        while selection != 1 and selection != 2:
-            selection = int(input('Invalid, please enter 1 or 2: '))
-        if selection == 1:
+        selection = input('\n[1] Single \n[2] Multiplayer\n\n')
+        
+        while selection != '1' and selection != '2':
+            selection = input('Invalid, please enter 1 or 2: ')
+        if selection == '1':
             self.player2 = AI()
-        if selection == 2:
+        if selection == '2':
             self.player2 = Human()
+
 
     def display_rules(self):
         print(f'\n')
