@@ -3,7 +3,6 @@ import random
 
 class AI(Player):
     def __init__(self):
-        self.name = ['Sunny', 'Orange', 'Mike', 'Lester']
         super().__init__()
 
     def select_gesture(self):
@@ -11,7 +10,8 @@ class AI(Player):
         return gesture_selection
 
     def get_name(self, name):
-        self.name = random.choice(self.name)
+        names = ['Sunny', 'Orange', 'Mike', 'Lester']
+        self.name = random.choice(names)
 
 
     

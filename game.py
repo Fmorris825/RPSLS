@@ -7,6 +7,8 @@ class Game:
     def __init__(self):
         self.player1 = Human()
         self.player2 = 'Player 2'
+        self.rules = ['Rules:', 'First to win 2 rounds wins the match!','Paper covers Rock', 'Rock crushes Lizard','Lizard poisons Spock', 'Spock smashes Scissors',
+        'Scissors decapitates Lizard', 'Lizard eats Paper', 'Paper disproves Spock','Spock vaporizes Rock']
 
     def display_greeting(self):
         print(f'\n$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$')
@@ -26,19 +28,10 @@ class Game:
 
 
     def display_rules(self):
-        # list and loop
-        print(f'\n')
-        print(f'Rules: \nFirst to win 2 rounds wins the match! \n')
-        print('Rock crushes Scissors')
-        print('Scissors cut Paper')
-        print('Paper covers Rock')
-        print('Rock crushes Lizard')
-        print('Spock smashes Scissors')
-        print('Scissors decapitates Lizard')
-        print('Lizard eats Paper')
-        print('Paper disproves Spock')
-        print('Spock vaporizes Rock')
-        print(f'\n')
+        for rule in self.rules:
+            print(rule)
+            sleep(.3)
+        print()
 
     def run_match(self):
         self.player1_wins = 0
