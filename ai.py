@@ -10,7 +10,7 @@ class AI(Player):
         return gesture_selection
 
     def get_name(self, name):
-        names = ['Sunny', 'Orange', 'Mike', 'Lester']
+        names = ['Sunny', 'Orange', 'Mike', 'Lester', 'Robby', 'Jill', 'Marisha', 'Liam', 'Travis', 'Matt', 'Taliesin', 'Sam', 'Laura', 'Ashley']
         self.name = random.choice(names)
 
 

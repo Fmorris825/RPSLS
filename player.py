@@ -8,16 +8,16 @@ class Player:
     
     def select_gesture(self):
         gesture_selection = ''
+        while_loop_count = 0
         while gesture_selection not in range(1,6):
+            while_loop_count += 1
+            if while_loop_count > 1:
+                print('\nPay attention to directions.')
             try:
-                gesture_selection = int(input(f'\nSelect your move: '))
+                gesture_selection = int(input(f'Select a number 1-5: '))
                 
             except ValueError: 
-                print('Invalid Input')
-                
-        # while gesture_selection != range(1,6):
-        #     print('Invalid')
-        #     gesture_selection = input(f'\nSelect your move: ')
+                pass
 
         gesture_selection = int(gesture_selection)
         gesture_index = gesture_selection - 1

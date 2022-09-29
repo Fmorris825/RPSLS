@@ -16,11 +16,11 @@ class Game:
         print(f'$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n')
 
     def multiplayer_or_ai(self):
-        print(f'What game mode do you want to play? ')
-        selection = input('\n[1] Single \n[2] Multiplayer\n\n')
+        print(f'What game mode do you want to play? \n\n[1] Single \n[2] Multiplayer')
+        selection = input('\nSelect 1 or 2: ')
         
         while selection != '1' and selection != '2':
-            selection = input('Invalid, please enter 1 or 2: ')
+            selection = input('\nPay attention to directions.\nSelect 1 or 2: ')
         if selection == '1':
             self.player2 = AI()
         if selection == '2':
@@ -48,19 +48,16 @@ class Game:
                     print(f'{gesture}!')
                     sleep(.3)
                 print(f'\nTie! Try again!\n')
+                self.display_gestures()
                 player1_gesture = self.player1.select_gesture()
                 player2_gesture = self.player2.select_gesture()
 
             print()
             for gesture in self.player1.gestures:
-                print()
                 print(f'{gesture}!')
                 sleep(.3)
-            print()
+                print()
             
-
-            # print(f'\n{self.player1.name} throws {player1_gesture}\n')
-            # print(f'{self.player2.name} throws {player2_gesture}\n')
             player1_victory = self.decide_winner(player1_gesture, player2_gesture)
 
             if player1_victory:
@@ -72,23 +69,20 @@ class Game:
             if player1_victory:
                 winner_bracket = "beats"
             
-            print(f'{self.player1.name} : {player1_gesture} {winner_bracket} {player2_gesture} : {self.player2.name}')
-            print(f'{self.player1.name} : {self.player1_wins} | {self.player2.name} : {self.player2_wins}')
-            # print(f'{self.player1.name} has {self.player1_wins} wins')
-            # print()
-            # print(f'{self.player2.name} has {self.player2_wins} wins')
-            print()
+            print(f'{self.player1.name}\'s {player1_gesture} {winner_bracket} {self.player2.name}\'s {player2_gesture}')
+            print(f'{self.player1.name} : {self.player1_wins} | {self.player2.name} : {self.player2_wins}\n')
 
     def display_winner(self):
         if self.player1_wins == 2:
-            print(f'\n{self.player1.name} wins!!')
+            print(f'{self.player1.name} wins!!')
         if self.player2_wins == 2:
-            print(f'\n{self.player2.name} wins!!')
+            print(f'{self.player2.name} wins!!')
 
 
     def get_name(self):
         self.player1.get_name('Player 1')
         self.player2.get_name('Player 2')
+        print(f'{self.player1.name} vs {self.player2.name}!')
 
     def decide_winner(self, player1_gesture, player2_gesture):
         player1_victory = False
