@@ -36,12 +36,20 @@ class Game:
         print(f'\n')
 
     def run_match(self):
-        self.player1.select_gesture()
-        self.player2.select_gesture()
+        player1_gesture = self.player1.select_gesture()
+        player2_gesture = self.player2.select_gesture()
+        self.decide_winner(player1_gesture, player2_gesture)
 
     def get_name(self):
         self.player1.get_name()
         self.player2.get_name()
+
+    def decide_winner(self, player1_gesture, player2_gesture):
+        player1_victory = False
+        if player1_gesture == 'Rock':
+            if player2_gesture == 'Scissors' or 'Lizard':
+                player1_victory = True
+                
 
 
     def run_game(self):
